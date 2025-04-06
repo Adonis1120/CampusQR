@@ -1,0 +1,4 @@
+        @fluxScripts
+        @livewireScripts
+    </body>
+</html>

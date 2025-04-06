@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Rubik', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-zinc-50:  #ebf8ec;
+    --color-zinc-100: #d3f0d4;
+    --color-zinc-200: #a8e1aa;
+    --color-zinc-300: #7dd280;
+    --color-zinc-400: #52c256;
+    --color-zinc-500: #38a83c;
+    --color-zinc-600: #2c8b30;
+    --color-zinc-700: #246f27;
+    --color-zinc-800: #1f7c21; /* primary color: St. Toni's College green color */
+    --color-zinc-900: #195d1a;
+    --color-zinc-950: #0f330f;
+
+    --color-accent: var(--color-zinc-800);
+    --color-accent-content: var(--color-zinc-800);
+    --color-accent-foreground: var(--color-white);
+    --color-secondary: #f4f215; /* secondary color: St. Toni's College yellow color */
+    --color-secondary-subtle: #fbf9a3;
+    --color-secondary-muted: #ffd700; 
+    --color-primary-background: var(--color-zinc-200);
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-white);
+        --color-accent-content: var(--color-white);
+        --color-accent-foreground: var(--color-zinc-800);
+    }
+}
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-zinc-200, currentColor);
+    }
+}
+
+[data-flux-field]:not(ui-radio) {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply  !mb-0 !leading-tight;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+/* \[:where(&)\]:size-4 {
+    @apply size-4;
+} */
