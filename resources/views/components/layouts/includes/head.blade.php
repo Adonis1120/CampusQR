@@ -15,11 +15,11 @@
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Mitr&display=swap" rel="stylesheet">
 
-        <link rel="icon" type="image/svg+xml" href="{{ Vite::asset('resources/img/logo.svg') }}">
+        <link rel="icon" type="image/svg+xml" href="{{ Vite::asset('resources/img/stci-logo.png') }}">
 
         <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
         @fluxAppearance
     </head>
 

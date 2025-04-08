@@ -1,3 +1,5 @@
 <x-layouts.guest>
-   Homepage and QR section
+   <div class="container">
+      Homepage and QR section
+   </div>
 </x-layouts.guest>
