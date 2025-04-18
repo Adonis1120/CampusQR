@@ -1,0 +1,7 @@
+@use '../base' as *;
+
+@layer base {
+    @include all;
+    @include base;
+    @include typography;
+}

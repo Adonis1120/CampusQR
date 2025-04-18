@@ -2,7 +2,14 @@
     <span class="flex h-10 w-10 items-center justify-center rounded-md">
         <x-app-logo-icon class="me-2 h-7 fill-current text-white" />
     </span>
-    <span class="ml-1 mr-2 font-['Mitr'] text-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary group-hover:from-secondary group-hover:to-accent text-shadow-lg tracking-wide drop-shadow-md">
-        CampusQR 
+
+    <span class="relative inline-block ml-1 mr-2 font-['Mitr'] font-bold tracking-wide">
+        <span class="absolute inset-0 text-white opacity-40 blur-sm">
+            CampusQR
+        </span>
+
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary group-hover:from-secondary group-hover:to-accent">
+            CampusQR
+        </span>
     </span>
 </div>

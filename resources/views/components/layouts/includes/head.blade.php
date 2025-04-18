@@ -19,14 +19,14 @@
 
         <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
-        @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
+        @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         @fluxAppearance
     </head>
 
     @if ($layout == "app")
-        <body class="text-accent min-h-screen bg-white dark:bg-zinc-800">
+        <body class="app-body">
     @elseif ($layout == "auth")
-        <body class="text-accent min-h-screen bg-white antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
+        <body class="auth-body">
     @else
-        <body class="flex flex-col px-6 lg:px-8 items-center text-accent bg-[#FDFDFC] dark:bg-zinc-800 text-[#1b1b18]">
+        <body class="guest-body">
     @endif

@@ -1,16 +1,16 @@
 <x-layouts.includes.head {{ $attributes }} />
-    <header class="w-full !max-w-[500px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-6xl text-sm mb-2 not-has-[nav]:hidden">
-        <nav class="flex items-center justify-between w-full px-2 md:px-6 py-2">
-            <a href="{{ route('home') }}" class="mr-5 flex items-center space-x-2" wire:navigate>
+    <header class="header">
+        <nav class="header-nav">
+            <a href="{{ route('home') }}" class="header-brand" wire:navigate>
                 <x-app-logo />
             </a>
 
-            <div class="flex items-center gap-4">
+            <div class="header-nav-items">
                 @if (Route::has('login'))
                     @auth
                         <flux:menu.item icon="layout-grid" :href="route('dashboard')">{{ __('Dashboard') }}</flux:menu.item>
                     @else
-                        <flux:navbar class="-mb-px max-md:hidden">
+                        <flux:navbar class="-mb-px max-sm:hidden">
                             <flux:navbar.item icon="arrow-right-end-on-rectangle" :href="route('login')">Login</flux:navbar.item>
                             <flux:navbar.item icon="pencil-square" :href="route('register')">Register</flux:navbar.item>
                         </flux:navbar>

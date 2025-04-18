@@ -1,0 +1,26 @@
+$colors: (
+  zinc: (
+    50:  rgb(235, 248, 236),
+    100: rgb(211, 240, 212),
+    200: rgb(168, 225, 170),
+    300: rgb(125, 210, 128),
+    400: rgb(82, 194, 86),
+    500: rgb(56, 168, 60),
+    600: rgb(44, 139, 48),
+    700: rgb(36, 111, 39),
+    800: rgb(31, 124, 33), /* primary color: St. Toni's College green color */
+    900: rgb(25, 93, 26),
+    950: rgb(15, 51, 15),
+  ),
+  accent: (
+    DEFAULT: rgb(31, 124, 33),
+    content: rgb(31, 124, 33),
+    background: rgb(168, 225, 170),
+    foreground: var(--color-white),
+  ),
+  secondary: (
+    DEFAULT: rgb(244, 242, 21), /* secondary color: St. Toni's College yellow color */
+    subtle: rgb(251, 249, 163),
+    muted: rgb(255, 215, 0)
+  )
+);

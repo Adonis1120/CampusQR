@@ -1,0 +1,14 @@
+@use '../components' as *;
+@use '../modules' as *;
+@use '../states/hover' as *;
+
+@layer components {
+    // components: reusable across pages
+    @include card;
+    
+    // modules: page specific components
+    @include home;
+}
+
+// group hover doesn't work if it is inside a @layer components
+@include grp-hover;

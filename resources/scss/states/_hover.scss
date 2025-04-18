@@ -1,0 +1,10 @@
+@mixin grp-hover {
+    // group hover doesn't work if it is inside a @layer components
+    .grp-hover:hover {
+        @apply border-secondary transition-colors duration-1000;
+        
+        .grp-hover-text {
+            @apply text-secondary transition-colors duration-1000;
+        }
+    }
+}

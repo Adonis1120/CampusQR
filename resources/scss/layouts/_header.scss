@@ -1,0 +1,29 @@
+@mixin header {
+    .header {
+        @apply w-full max-w-[500px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-6xl text-sm mb-2 not-has-[nav]:hidden;
+
+        &-brand {
+            @apply mr-5 flex items-center space-x-2;
+        }
+
+        &-nav {
+            @apply flex items-center justify-between w-full px-2 md:px-6 py-2;
+
+            &-items {
+                @apply flex items-center gap-4;
+            }
+
+            &-item {
+                @apply -mb-px;
+
+                &--desktop {
+                    @apply max-sm:hidden;
+                }
+
+                &--mobile {
+                    @apply min-sm:hidden;
+                }
+            }
+        }
+    }
+}

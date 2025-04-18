@@ -1,0 +1,13 @@
+@mixin base {
+    .app-body {
+        @apply text-accent min-h-screen bg-white dark:bg-zinc-800;
+    }
+
+    .auth-body {
+        @apply text-accent min-h-screen bg-white antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900;
+    }
+
+    .guest-body {
+        @apply flex flex-col px-6 lg:px-8 items-center text-accent bg-[#FDFDFC] dark:bg-zinc-800 text-[#1b1b18];
+    }
+}

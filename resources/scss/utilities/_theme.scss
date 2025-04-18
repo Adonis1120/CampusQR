@@ -1,0 +1,25 @@
+@use '../theme' as *;
+@use '../states/dark';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: #{$font-theme};
+
+    @each $group, $shades in $colors {
+        @each $shade, $value in $shades {
+            --color-#{$group}-#{$shade}: #{$value};
+        }
+    }
+
+    --color-accent: var(--color-accent-DEFAULT);
+    --color-secondary: var(--color-secondary-DEFAULT);
+}
+
+@layer theme {
+    .dark {
+        @each $token, $value in dark.$dark-colors {
+            --color-#{$token}: #{$value};
+        }
+    }
+}
