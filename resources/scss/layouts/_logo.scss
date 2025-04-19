@@ -1,0 +1,29 @@
+@mixin logo {
+    .logo {
+        @apply flex h-10 w-40 items-center justify-center rounded-md text-lg bg-gradient-to-r from-white/50;
+
+        &-icon {
+            @apply flex h-10 w-10 items-center justify-center rounded-md;
+
+            &-container {
+                @apply me-2 h-7 fill-current text-white;
+            }
+
+            &-item {
+                @apply w-8;
+            }
+        }
+
+        &-text {
+            @apply relative inline-block ml-1 mr-2 font-['Mitr'] font-bold tracking-wide;
+
+            &--blur {
+                @apply absolute inset-0 text-white opacity-40 blur-sm;
+            }
+
+            &--gradient {
+                @apply text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary;
+            }
+        }
+    }
+}

@@ -1,3 +1,3 @@
 <div>
-    <img src="{{ Vite::asset('resources/img/stci-logo.png') }}" alt="" class="w-8">
+    <img src="{{ Vite::asset('resources/img/stci-logo.png') }}" alt="" class="logo-icon-item">
 </div>

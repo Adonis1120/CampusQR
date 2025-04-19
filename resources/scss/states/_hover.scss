@@ -8,3 +8,13 @@
         }
     }
 }
+
+@mixin logo-hover {
+    .logo-hover:hover {
+        @apply bg-gradient-to-l from-white/50 transition-all duration-1000;
+
+        .logo-hover-item {
+            @apply from-secondary to-accent;
+        }
+    }
+}
