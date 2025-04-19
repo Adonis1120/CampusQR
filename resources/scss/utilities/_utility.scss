@@ -1,0 +1,8 @@
+@layer utilities {
+    .flex-center {
+        // center items horizontally and vertically
+        // use it in the html class as, center-flex h-screen
+        // include the h-screen class to make it full height
+        @apply flex items-center justify-center;
+    }
+}

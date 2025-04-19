@@ -1,14 +1,22 @@
 @use '../components' as *;
 @use '../modules' as *;
 @use '../states/hover' as *;
+@use '../layouts' as *;
 
 @layer components {
-    // components: reusable across pages
-    @include card;
-    
+    // layouts: layout components or elements
+    @include header;
+    @include main;
+    @include split;
+
     // modules: page specific components
     @include home;
-}
 
-// group hover doesn't work if it is inside a @layer components
-@include grp-hover;
+    // components: reusable across pages
+    @include card;
+    @include logo;
+
+    // effects: group hover doesn't work if it is after the module or component who used it
+    @include logo-hover;
+    @include grp-hover;
+}
