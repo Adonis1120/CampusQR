@@ -1,3 +1,7 @@
+@use 'mixin' as *;
+
 @mixin main {
-    
+    .main {
+        @include screen-width;
+    }
 }

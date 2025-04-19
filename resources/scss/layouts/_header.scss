@@ -1,6 +1,9 @@
+@use 'mixin' as *;
+
 @mixin header {
     .header {
-        @apply w-full max-w-[500px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-6xl text-sm mb-2 not-has-[nav]:hidden;
+        @include screen-width;
+        @apply text-sm mb-2 not-has-[nav]:hidden;
 
         &-brand {
             @apply mr-5 flex items-center space-x-2;

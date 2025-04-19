@@ -29,7 +29,7 @@
         </nav>
     </header>
 
-    <main class="lg:max-w-6xl max-w-[500px] sm:max-w-[600px] md:max-w-[800px] w-full">
+    <main class="main">
         {{ $slot }}
     </main>
 
