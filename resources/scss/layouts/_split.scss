@@ -1,3 +1,35 @@
 @mixin split {
-    
+    .split {
+        @apply relative grid h-dvh flex-col items-center justify-center px-8 sm:px-0 lg:max-w-none lg:grid-cols-2 lg:px-0;
+
+        &-left {
+            @apply relative hidden h-full flex-col p-10 lg:flex dark:border-r dark:border-neutral-800;
+
+            &-gradient {
+                @apply absolute inset-0 bg-gradient-to-br from-zinc-400 to-zinc-100;
+            }
+
+            &-logo {
+                @apply relative z-20 flex items-center text-lg font-medium;
+            }
+
+            &-content {
+                @apply relative z-20 mt-auto;
+            }
+
+            &-quote {
+                @apply text-zinc-900;
+            }
+        }
+
+        &-right {
+            @apply w-full lg:p-8;
+
+            &-container {
+                @apply mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px];
+            }
+
+            
+        }
+    }
 }
