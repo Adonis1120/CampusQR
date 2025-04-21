@@ -1,0 +1,13 @@
+@mixin setting {
+    .setting {
+        @apply flex items-start max-md:flex-col;
+
+        &-nav {
+            @apply me-10 w-full pb-4 md:w-[220px];
+        }
+
+        &-separator {
+            @apply md:hidden;
+        }
+    }
+}
