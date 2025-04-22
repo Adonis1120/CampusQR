@@ -6,8 +6,44 @@
             @apply me-10 w-full pb-4 md:w-[220px];
         }
 
-        &-separator {
-            @apply md:hidden;
+        &-header {
+            @apply flex-1 self-stretch max-md:pt-6;
+        }
+
+        &-slot {
+            @apply mt-5 w-full max-w-lg;
+        }
+
+        &-form {
+            @apply my-6 w-full space-y-6;
+        }
+
+        &-footer {
+            @apply flex items-center gap-4;
+        }
+
+        &-submit {
+            @apply flex items-center justify-end;
+        }
+
+        &-resend {
+            @apply text-sm cursor-pointer;
+        }
+
+        &-message {
+            @apply mt-2 font-medium dark:text-green-400 text-green-600;
+        }
+
+        &-delete {
+            @apply mt-10 space-y-6;
+
+            &-heading {
+                @apply relative mb-5;
+            }
+
+            &-actions {
+                @apply flex justify-end space-x-2 rtl:space-x-reverse;
+            }
         }
     }
 }

@@ -41,7 +41,7 @@ new class extends Component {
     @include('partials.settings-heading')
 
     <x-settings.layout :heading="__('Update password')" :subheading="__('Ensure your account is using a long, random password to stay secure')">
-        <form wire:submit="updatePassword" class="mt-6 space-y-6">
+        <form wire:submit="updatePassword" class="setting-form">
             <flux:input
                 wire:model="current_password"
                 :label="__('Current password')"
@@ -64,8 +64,8 @@ new class extends Component {
                 autocomplete="new-password"
             />
 
-            <div class="flex items-center gap-4">
-                <div class="flex items-center justify-end">
+            <div class="setting-footer">
+                <div class="setting-submit">
                     <flux:button variant="primary" type="submit" class="w-full">{{ __('Save') }}</flux:button>
                 </div>
 
