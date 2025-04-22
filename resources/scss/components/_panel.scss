@@ -1,0 +1,13 @@
+@mixin panel {
+    .panel {
+        @apply my-6 space-y-4 p-4 md:p-8 border rounded;
+
+        &-container {
+            @apply grid gap-4 auto-rows-min;
+        }
+
+        &--bg-color {
+            @apply bg-accent-background dark:bg-secondary-subtle;
+        }
+    }
+}

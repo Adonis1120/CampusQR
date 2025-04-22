@@ -19,6 +19,7 @@
     // components: reusable across pages
     @include card;
     @include logo;
+    @include panel;
 
     // effects: group hover doesn't work if it is after the module or component who used it
     @include logo-hover;
