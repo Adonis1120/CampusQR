@@ -9,7 +9,7 @@
 
     <flux:separator class="md:hidden" />
 
-    <div class="setting-header">
+    <div class="setting-heading">
         <flux:heading>{{ $heading ?? '' }}</flux:heading>
         <flux:subheading>{{ $subheading ?? '' }}</flux:subheading>
 
