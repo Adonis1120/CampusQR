@@ -35,13 +35,13 @@ new #[Layout('components.layouts.auth')] class extends Component {
     }
 }; ?>
 
-<div class="flex flex-col gap-6">
+<div class="auth">
     <x-auth-header :title="__('Create an account')" :description="__('Enter your details below to create your account')" />
 
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <form wire:submit="register" class="flex flex-col gap-6">
+    <form wire:submit="register" class="auth-form">
         <!-- Name -->
         <flux:input
             wire:model="name"
@@ -83,7 +83,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             :placeholder="__('Confirm password')"
         />
 
-        <div class="flex items-center justify-end">
+        <div class="auth-form-footer">
             <flux:button type="submit" variant="primary" class="w-full">
                 {{ __('Create account') }}
             </flux:button>

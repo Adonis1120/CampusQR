@@ -68,13 +68,13 @@ new #[Layout('components.layouts.auth')] class extends Component {
     }
 }; ?>
 
-<div class="flex flex-col gap-6">
+<div class="auth">
     <x-auth-header :title="__('Reset password')" :description="__('Please enter your new password below')" />
 
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <form wire:submit="resetPassword" class="flex flex-col gap-6">
+    <form wire:submit="resetPassword" class="auth-form">
         <!-- Email Address -->
         <flux:input
             wire:model="email"
@@ -104,7 +104,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             :placeholder="__('Confirm password')"
         />
 
-        <div class="flex items-center justify-end">
+        <div class="auth-form-footer">
             <flux:button type="submit" variant="primary" class="w-full">
                 {{ __('Reset password') }}
             </flux:button>

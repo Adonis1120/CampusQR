@@ -32,7 +32,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
     }
 }; ?>
 
-<div class="flex flex-col gap-6">
+<div class="auth">
     <x-auth-header
         :title="__('Confirm password')"
         :description="__('This is a secure area of the application. Please confirm your password before continuing.')"
@@ -41,7 +41,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <form wire:submit="confirmPassword" class="flex flex-col gap-6">
+    <form wire:submit="confirmPassword" class="auth-form">
         <!-- Password -->
         <flux:input
             wire:model="password"

@@ -13,6 +13,7 @@
 
     // modules: page specific components
     @include home;
+    @include auth;
 
     // components: reusable across pages
     @include card;
