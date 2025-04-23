@@ -3,7 +3,7 @@
         {{-- Overview Cards --}}
         <x-sections.panel :column="3">
             <!-- Total Students Card -->
-            <div class="relative group flex flex-col p-6 bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-900/20 dark:to-neutral-800 rounded-xl border border-zinc-100 dark:border-zinc-900/30 hover:border-zinc-300 dark:hover:border-zinc-500 transition-all shadow-sm hover:shadow-md">
+            <div class="relative group flex flex-col p-6 bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-600 dark:to-zinc-900 rounded-xl border border-zinc-100 dark:border-zinc-900/30 hover:border-zinc-300 dark:hover:border-zinc-500 transition-all shadow-sm hover:shadow-md">
                 <div class="flex justify-between items-start mb-2">
                     <div>
                         <p class="text-sm font-medium text-zinc-600 dark:text-zinc-300">Total Students</p>
@@ -26,7 +26,7 @@
             </div>
         
             <!-- Today's Attendance Card -->
-            <div class="relative group flex flex-col p-6 bg-gradient-to-br from-green-50 to-white dark:from-green-900/20 dark:to-neutral-800 rounded-xl border border-green-100 dark:border-green-900/30 hover:border-green-300 dark:hover:border-green-500 transition-all shadow-sm hover:shadow-md">
+            <div class="relative group flex flex-col p-6 bg-gradient-to-br from-green-50 to-white dark:from-zinc-800 dark:to-zinc-950 rounded-xl border border-green-100 dark:border-green-900/30 hover:border-green-300 dark:hover:border-green-500 transition-all shadow-sm hover:shadow-md">
                 <div class="flex justify-between items-start mb-2">
                     <div>
                         <p class="text-sm font-medium text-green-600 dark:text-green-300">Today's Attendance</p>
@@ -49,10 +49,10 @@
             </div>
         
             <!-- QR Scans Today Card -->
-            <div class="relative group flex flex-col p-6 bg-gradient-to-br from-blue-50 to-white dark:from-blue-900/20 dark:to-neutral-800 rounded-xl border border-blue-100 dark:border-blue-900/30 hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md">
+            <div class="relative group flex flex-col p-6 bg-gradient-to-br from-yellow-50 to-white dark:from-secondary dark:to-yellow-950 rounded-xl border border-blue-100 dark:border-blue-900/30 hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md">
                 <div class="flex justify-between items-start mb-2">
                     <div>
-                        <p class="text-sm font-medium text-blue-600 dark:text-blue-300">QR Scans Today</p>
+                        <p class="text-sm font-medium text-secondary-muted dark:text-secondary-subtle">QR Scans Today</p>
                         <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">328</h2>
                     </div>
                     <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/40">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="mt-auto">
-                    <div class="flex items-center text-xs text-blue-600 dark:text-blue-300">
+                    <div class="flex items-center text-xs text-secondary-muted dark:text-secondary-subtle">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
@@ -75,7 +75,7 @@
         {{-- Main Content Area --}}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-full">
             {{-- Attendance Chart --}}
-            <div class="lg:col-span-1 relative h-full bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
+            <div class="lg:col-span-1 relative h-full bg-white dark:bg-zinc-900 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200">Weekly Attendance</h3>
                     <div class="flex space-x-2">
@@ -89,7 +89,7 @@
             </div>
 
             {{-- Recent Scans --}}
-            <div class="relative h-full bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
+            <div class="relative h-full bg-white dark:bg-zinc-900 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200">Recent QR Scans</h3>
                     <button class="text-xs text-primary-600 dark:text-primary-400">View All</button>
@@ -151,9 +151,9 @@
 
         {{-- Quick Stats --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
+            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
                 <div class="flex items-center space-x-3">
-                    <div class="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-900/40">
+                    <div class="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800/40">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-zinc-600 dark:text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
@@ -164,7 +164,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
+            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
                 <div class="flex items-center space-x-3">
                     <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/40">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -177,7 +177,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
+            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
                 <div class="flex items-center space-x-3">
                     <div class="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/40">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -190,7 +190,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
+            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
                 <div class="flex items-center space-x-3">
                     <div class="p-2 rounded-lg bg-rose-100 dark:bg-rose-900/40">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-600 dark:text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -253,6 +253,7 @@
                                 color: 'rgba(0, 0, 0, 0.05)'
                             },
                             ticks: {
+                                color: 'rgba(255, 255, 255, 0.5)',
                                 callback: function(value) {
                                     return value + '%';
                                 }
@@ -261,6 +262,9 @@
                         x: {
                             grid: {
                                 display: false
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.5)'
                             }
                         }
                     }
