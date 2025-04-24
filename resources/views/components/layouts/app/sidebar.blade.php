@@ -10,6 +10,15 @@
             <flux:navlist.group :heading="__('Overview')" class="grid">
                 <flux:navlist.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
             </flux:navlist.group>
+            <flux:navlist.group :heading="__('Attendance')" class="grid">
+                <flux:navlist.item icon="camera" :href="route('scanner')" :current="request()->routeIs('scanner')" wire:navigate>{{ __('QR Scanner') }}</flux:navlist.item>
+                <flux:navlist.item icon="qr-code" :href="route('generator')" :current="request()->routeIs('generator')" wire:navigate>{{ __('QR Generator') }}</flux:navlist.item>
+                <flux:navlist.item icon="clipboard-document-check" :href="route('attendance')" :current="request()->routeIs('attendance')" wire:navigate>{{ __('Report') }}</flux:navlist.item>
+            </flux:navlist.group>
+            <flux:navlist.group :heading="__('Management')" class="grid">
+                <flux:navlist.item icon="identification" :href="route('student')" :current="request()->routeIs('student')" wire:navigate>{{ __('Student') }}</flux:navlist.item>
+                <flux:navlist.item icon="user" :href="route('users')" :current="request()->routeIs('users')" wire:navigate>{{ __('User') }}</flux:navlist.item>
+            </flux:navlist.group>
         </flux:navlist>
 
         <flux:spacer />

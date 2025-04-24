@@ -10,4 +10,8 @@
     .guest-body {
         @apply flex flex-col px-6 lg:px-8 items-center text-accent bg-accent-foreground dark:bg-zinc-800 dark:text-white;
     }
+
+    button {
+        @apply cursor-pointer;
+    }
 }

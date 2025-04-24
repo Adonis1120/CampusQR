@@ -101,7 +101,7 @@
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Juan Dela Cruz</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Grade 12 - STEM | Scanned at Main Gate</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">BSHRM | Scanned at Main Gate</p>
                             <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">2 mins ago</p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Maria Santos</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Grade 11 - HUMSS | Scanned at Library</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">BSIT | Scanned at Main Gate</p>
                             <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">15 mins ago</p>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Pedro Bautista</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Grade 10 - Diamond | Late Arrival (8:15 AM)</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">BSIT | Scanned at Back Gate</p>
                             <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">1 hour ago</p>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Ana Reyes</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Grade 9 - Emerald | Scanned at Gym</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">BSCrim | Scanned at Main Gate</p>
                             <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">2 hours ago</p>
                         </div>
                     </div>
@@ -141,8 +141,8 @@
                         </div>
                         <div>
                             <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Carlos Gonzales</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Grade 12 - ABM | Absent (No scan today)</p>
-                            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Last scan: yesterday</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">BSED | Scanned at Main Gate</p>
+                            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">2 hours ago</p>
                         </div>
                     </div>
                 </div>

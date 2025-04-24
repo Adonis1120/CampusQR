@@ -1,13 +1,32 @@
 <?php
 
+use App\Livewire\Users\Users;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::view('/', 'welcome')->name('home');
+Route::view('/', 'pages/welcome')->name('home');
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'pages/dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::view('student', 'pages/student')
+    ->middleware(['auth', 'verified'])
+    ->name('student');
+
+Route::view('attendance', 'pages/attendance')
+    ->middleware(['auth', 'verified'])
+    ->name('attendance');
+
+Route::view('scanner', 'pages/scanner')
+    ->middleware(['auth', 'verified'])
+    ->name('scanner');
+
+Route::view('generator', 'pages/generator')
+    ->middleware(['auth', 'verified'])
+    ->name('generator');
+
+Route::get('/users', Users::class)->name('users');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
