@@ -66,8 +66,9 @@ class UserForm extends Component
 
         $this->resetForm();
         Flux::modal('user-form')->close();
-        $this->dispatch('reloadUser');
-        $this->dispatch('show-toast', 'Cooperative saved successfully!');
+        //$this->dispatch('reloadUser');
+        $this->dispatch('resetPagination');
+        $this->dispatch('show-toast', 'User saved successfully!');
     }
 
     public function resetForm()

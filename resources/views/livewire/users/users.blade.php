@@ -1,9 +1,13 @@
 <div>
     <flux:custom.header  header_title="User Management" header_subtitle="Manage User Accounts" />
 
-    <flux:modal.trigger name="userForm" class="flex justify-end p-4">
-        <flux:button icon="user-plus" disabled>{{ __('Register User') }}</flux:button>
-    </flux:modal.trigger>
+    <div class="flex justify-between items-center p-4 gap-4">
+        <flux:custom.search />
+        
+        <flux:modal.trigger name="userForm" class="flex justify-end">
+            <flux:button icon="user-plus" disabled>{{ __('Register User') }}</flux:button>
+        </flux:modal.trigger>
+    </div>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-accent dark:text-white">

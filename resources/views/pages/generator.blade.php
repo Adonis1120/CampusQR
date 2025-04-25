@@ -11,9 +11,9 @@
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Select Student</label>
                     <select class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm p-2">
                         <option>Select a student</option>
-                        <option>Juan Dela Cruz - Grade 12 STEM</option>
-                        <option>Maria Santos - Grade 11 HUMSS</option>
-                        <option>Pedro Bautista - Grade 10 Diamond</option>
+                        <option>Juan Dela Cruz</option>
+                        <option>Maria Santos</option>
+                        <option>Pedro Bautista</option>
                     </select>
                 </div>
 
@@ -81,7 +81,7 @@
                             <p class="text-gray-800 dark:text-gray-200 font-medium">-</p>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Grade & Section</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Course</p>
                             <p class="text-gray-800 dark:text-gray-200 font-medium">-</p>
                         </div>
                         <div>

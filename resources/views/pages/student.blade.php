@@ -21,16 +21,16 @@
                     <select class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm">
                         <option>All Course</option>
                         <option>BSIT</option>
-                        <option>BSCrim</option>
+                        <option>BSN</option>
                         <option>BSED</option>
                         <option>BEED</option>
-                        <option>BSHRM</option>
+                        <option>BSHM</option>
                     </select>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Location</label>
                     <select class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm">
-                        <option>All Sections</option>
+                        <option>All Locations</option>
                         <option>Main Gate</option>
                         <option>Back Gate</option>
                     </select>

@@ -19,10 +19,10 @@
                     <select class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm">
                         <option>All Course</option>
                         <option>BSIT</option>
-                        <option>BSCrim</option>
+                        <option>BSN</option>
                         <option>BSED</option>
                         <option>BEED</option>
-                        <option>BSHRM</option>
+                        <option>BSHM</option>
                     </select>
                 </div>
                 <div class="flex items-end">
