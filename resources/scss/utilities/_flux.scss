@@ -15,3 +15,9 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+[data-flux-input] {
+    svg.animate-spin {
+        @apply hidden;
+    }
+}
