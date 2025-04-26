@@ -24,6 +24,11 @@ class Users extends Component
         //$this->authorize('viewAny', User::class);
     }
 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
     public function showForm($id)
     {
         $this->dispatch('formUser', $id);
