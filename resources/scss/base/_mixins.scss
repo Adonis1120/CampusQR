@@ -1,0 +1,9 @@
+@mixin mixins {
+    .container {
+        @apply flex justify-between items-center p-4 gap-4;
+    }
+
+    .scrollable {
+        @apply relative overflow-x-auto shadow-md sm:rounded-lg;
+    }
+}
