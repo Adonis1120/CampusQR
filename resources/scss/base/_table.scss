@@ -1,0 +1,27 @@
+@mixin table {
+    table {
+        @apply w-full text-sm text-left rtl:text-right text-accent dark:text-white;
+    
+        thead {
+            @apply text-sm text-accent uppercase bg-zinc-200 dark:bg-accent dark:text-white;
+
+            th {
+                @apply p-4;
+            }
+        }
+
+        tbody {
+            tr {
+                @apply bg-zinc-50 border-b dark:bg-zinc-900 border-zinc-200 dark:border-accent hover:bg-zinc-100 dark:hover:bg-zinc-800;
+                
+                th {
+                    @apply px-2 font-medium whitespace-nowrap dark:text-white;
+                }
+
+                td {
+                    @apply px-2;
+                }
+            }
+        }
+    }
+}
