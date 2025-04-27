@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\Role;
+use App\Livewire\Students\Student;
 use App\Livewire\Users\Users;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -10,9 +12,9 @@ Route::view('dashboard', 'pages/dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('student', 'pages/student')
+/*Route::view('student', 'pages/student')
     ->middleware(['auth', 'verified'])
-    ->name('student');
+    ->name('student');*/
 
 Route::view('attendance', 'pages/attendance')
     ->middleware(['auth', 'verified'])
@@ -26,9 +28,15 @@ Route::view('generator', 'pages/generator')
     ->middleware(['auth', 'verified'])
     ->name('generator');
 
-Route::get('/users', Users::class)->name('users');
+// Route::get('/users', Users::class)->name('users');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/students', Student::class)->name('students');
+
+    Route::middleware('role:' . Role::ADMIN->value)->group(function () {
+        Route::get('/users', Users::class)->name('users');
+    });
+
     Route::redirect('settings', 'settings/profile');
 
     Volt::route('settings/profile', 'settings.profile')->name('settings.profile');

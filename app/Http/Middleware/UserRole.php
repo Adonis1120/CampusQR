@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use App\Enums\Role;
 
 class UserRole
 {
@@ -16,9 +17,9 @@ class UserRole
      */
     public function handle(Request $request, Closure $next, string ...$roles): Response
     {
-        if (!Auth::check() || !in_array(Auth::user()->role->value, $roles)) {
-            //abort(403, 'Unauthorized.');
-            return redirect('/login');
+        if (!Auth::check() || !in_array(Auth::user()->role, $roles)) {
+            abort(403, 'Unauthorized.');
+            //return redirect('/login');
         }
 
         return $next($request);

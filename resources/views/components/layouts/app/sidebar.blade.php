@@ -16,8 +16,10 @@
                 <flux:navlist.item icon="clipboard-document-check" :href="route('attendance')" :current="request()->routeIs('attendance')" wire:navigate>{{ __('Report') }}</flux:navlist.item>
             </flux:navlist.group>
             <flux:navlist.group :heading="__('Management')" class="grid">
-                <flux:navlist.item icon="identification" :href="route('student')" :current="request()->routeIs('student')" wire:navigate>{{ __('Student') }}</flux:navlist.item>
-                <flux:navlist.item icon="user" :href="route('users')" :current="request()->routeIs('users')" wire:navigate>{{ __('User') }}</flux:navlist.item>
+                <flux:navlist.item icon="identification" :href="route('students')" :current="request()->routeIs('students')" wire:navigate>{{ __('Students') }}</flux:navlist.item>
+                @if (in_array(auth()->user()->role, ['admin']))
+                    <flux:navlist.item icon="user" :href="route('users')" :current="request()->routeIs('users')" wire:navigate>{{ __('Users') }}</flux:navlist.item>
+                @endif
             </flux:navlist.group>
         </flux:navlist>
 
