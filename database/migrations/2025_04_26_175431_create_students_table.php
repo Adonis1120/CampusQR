@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('suffix', 10)->nullable();
             $table->string('guardian_name', 100);
             $table->string('relationship', 30);
-            $table->string('cp_number', 11);
-            $table->string('qr_code', 100)->unique();
+            $table->string('cp_number', 12);
+            $table->string('qr_code', 100)->unique()->nullable();
             $table->timestamps();
             
             $table->index(['last_name', 'first_name']);

@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(50)->create();
+        User::factory(5)->create();
 
         User::factory()->create([
             'name' => 'Test User',
@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'role' => 'admin',
         ]);
+
+        $this->call(StudentSeeder::class);
     }
 }

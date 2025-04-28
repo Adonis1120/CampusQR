@@ -1,7 +1,7 @@
 <?php
 
 use App\Enums\Role;
-use App\Livewire\Students\Student;
+use App\Livewire\Students\Students;
 use App\Livewire\Users\Users;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -31,7 +31,7 @@ Route::view('generator', 'pages/generator')
 // Route::get('/users', Users::class)->name('users');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/students', Student::class)->name('students');
+    Route::get('/students', Students::class)->name('students');
 
     Route::middleware('role:' . Role::ADMIN->value)->group(function () {
         Route::get('/users', Users::class)->name('users');

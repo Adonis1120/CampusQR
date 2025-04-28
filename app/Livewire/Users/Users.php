@@ -2,27 +2,23 @@
 
 namespace App\Livewire\Users;
 
+use App\Enums\Role;
 use Livewire\Component;
 use App\Models\User;
 use Flux\Flux;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
 use Livewire\Attributes\On;
 
 class Users extends Component
 {
-    use AuthorizesRequests, WithPagination;
+    use WithPagination;
 
     public $user_id;
     public $search = '';
 
     protected $paginationTheme = 'tailwind';
     protected $listeners = ['resetPagination' => 'resetPage'];
-
-    public function mount()
-    {
-        //$this->authorize('viewAny', User::class);
-    }
 
     public function updatingSearch()
     {
@@ -45,11 +41,14 @@ class Users extends Component
         $user = User::find($this->user_id);
 
         if (!$user) {
-            session()->flash('error', 'User not found.');
+            session()->flash('message', 'User not found.');
             return;
         }
 
-        // $this->authorize('delete', $user);
+        // $this->authorize('delete', $user);   // Uncomment if using policies
+        if (!Auth::check() || Auth::user()->role !== Role::ADMIN->value) {
+            abort(403, 'Unauthorized.');
+        }
         
         $user->delete();
 

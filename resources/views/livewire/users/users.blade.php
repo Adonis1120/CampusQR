@@ -19,9 +19,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
-                    {{-- @can('update', auth()->user()) --}}
-                        <th scope="col">Action</th>
-                    {{-- @endcan --}}
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,12 +40,10 @@
                         <td>
                             {{ $user->role }}
                         </td>
-                        {{-- @can('update', $user)--}}
-                            <td>
-                                <flux:button icon="pencil-square" size="sm" variant="ghost" wire:click="showForm('{{ $user->id }}')"></flux:button>
-                                <flux:button icon="trash" size="sm" variant="ghost" wire:click="delete('{{ $user->id }}')"></flux:button>
-                            </td>
-                        {{-- @endcan --}}
+                        <td>
+                            <flux:button icon="pencil-square" size="sm" variant="ghost" wire:click="showForm('{{ $user->id }}')"></flux:button>
+                            <flux:button icon="trash" size="sm" variant="ghost" wire:click="delete('{{ $user->id }}')"></flux:button>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
