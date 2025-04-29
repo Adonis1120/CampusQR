@@ -38,7 +38,7 @@
                             {{ $student->student_number }}
                         </td>
                         <th scope="row">
-                            {{ $student->first_name . ' ' . $student->middle_initial . ' ' . $student->last_name . ' ' . $student->suffix }}
+                            {{ $student->first_name . ' ' . $student->middle_initial . '. ' . $student->last_name . ' ' . $student->suffix }}
                         </th>
                         <td>
                             {{ $student->guardian_name }}

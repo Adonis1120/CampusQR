@@ -1,5 +1,3 @@
-//import flux from 'livewire-flux/tailwind';
-
 export default {
     content: [
         './resources/views/**/*.blade.php',
@@ -9,7 +7,4 @@ export default {
     theme: {
         extend: {},
     },
-    //plugins: [
-    //  flux(),
-    //],
 };

@@ -12,10 +12,6 @@ Route::view('dashboard', 'pages/dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-/*Route::view('student', 'pages/student')
-    ->middleware(['auth', 'verified'])
-    ->name('student');*/
-
 Route::view('attendance', 'pages/attendance')
     ->middleware(['auth', 'verified'])
     ->name('attendance');
@@ -27,8 +23,6 @@ Route::view('scanner', 'pages/scanner')
 Route::view('generator', 'pages/generator')
     ->middleware(['auth', 'verified'])
     ->name('generator');
-
-// Route::get('/users', Users::class)->name('users');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/students', Students::class)->name('students');

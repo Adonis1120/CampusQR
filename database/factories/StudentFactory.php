@@ -24,7 +24,7 @@ class StudentFactory extends Factory
             ])->create()->id,
             'student_number' => $this->faker->unique()->numerify('##########'),
             'first_name' => $this->faker->firstName(),
-            'middle_initial' => $this->faker->randomLetter(),
+            'middle_initial' => strtoupper($this->faker->randomLetter()),
             'last_name' => $this->faker->lastName(),
             'suffix' => $this->faker->optional()->suffix(),
             'guardian_name' => $this->faker->name(),
