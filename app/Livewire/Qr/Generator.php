@@ -9,8 +9,10 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class Generator extends Component
 {
     public $students;
+    public $studentSelected;
     public $studentId;
     public $qrCodeSize = 300;
+    public $qrCode;
 
     public function mount() {
         $this->students = Student::all();
@@ -18,11 +20,7 @@ class Generator extends Component
 
     public function generateQRCode()
     {
-        $student = Student::find($this->studentId);
-
-        $qrCode = QrCode::size($this->qrCodeSize)->generate($student->student_number);
-
-        return response()->json(['qrCode' => $qrCode]);
+        $this->studentSelected = Student::find($this->studentId);
     }
 
     public function render()
