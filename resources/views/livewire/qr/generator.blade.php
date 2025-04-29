@@ -1,4 +1,4 @@
-<div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
+<div class="app-page-wrapper">
     <flux:custom.header header_title="QR Generator" header_subtitle="Generate QR code for students." />
 
     <div class="container">

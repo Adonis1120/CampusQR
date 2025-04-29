@@ -1,4 +1,4 @@
-<div>
+<div class="app-page-wrapper">
     <flux:custom.header  header_title="User Management" header_subtitle="Manage User Accounts" />
 
     <div class="container">

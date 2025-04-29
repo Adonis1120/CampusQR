@@ -126,7 +126,7 @@
             </flux:menu>
         </flux:dropdown>
     </flux:header>
-
+    
     {{ $slot }}
 
 <x-layouts.includes.foot />
