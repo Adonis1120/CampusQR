@@ -1,10 +1,10 @@
 @mixin mixins {
-    .app-page-wrapper {
+    .wrapper {
         @apply flex flex-col h-full w-full flex-1 gap-4;
     }
     
     .container {
-        @apply flex justify-between items-center p-4 gap-4;
+        @apply flex flex-col md:flex-row justify-between items-center p-4 gap-4;
 
         &-content-end {
             @apply flex-1 flex justify-end items-end h-full w-full;

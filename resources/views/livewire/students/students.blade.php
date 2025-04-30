@@ -1,4 +1,4 @@
-<div class="app-page-wrapper">
+<div class="wrapper">
     <flux:custom.header  header_title="Student Management" header_subtitle="Manage Student Information" />
 
     <div class="container">
