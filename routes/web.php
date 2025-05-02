@@ -2,6 +2,7 @@
 
 use App\Enums\Role;
 use App\Livewire\Qr\Generator;
+use App\Livewire\Qr\Scanner;
 use App\Livewire\Students\Students;
 use App\Livewire\Users\Users;
 use Illuminate\Support\Facades\Route;
@@ -17,11 +18,11 @@ Route::view('attendance', 'pages/attendance')
     ->middleware(['auth', 'verified'])
     ->name('attendance');
 
+/*
 Route::view('scanner', 'pages/scanner')
     ->middleware(['auth', 'verified'])
     ->name('scanner');
 
-/*
 Route::view('generator', 'pages/generator')
     ->middleware(['auth', 'verified'])
     ->name('generator');
@@ -32,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware('role:' . Role::ADMIN->value)->group(function () {
         Route::get('/generator', Generator::class)->name('generator');
+        Route::get('/scanner', Scanner::class)->name('scanner');
         Route::get('/users', Users::class)->name('users');
     });
 

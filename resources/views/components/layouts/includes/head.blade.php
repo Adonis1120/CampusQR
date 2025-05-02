@@ -21,6 +21,7 @@
 
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         @fluxAppearance
+        <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     </head>
 
     @if ($layout == "app")

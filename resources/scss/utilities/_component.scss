@@ -17,7 +17,8 @@
     @include setting;
 
     // components: reusable across pages
-    @include card;
+    @include mixins;
+    @include cards;
     @include logo;
     @include panel;
 

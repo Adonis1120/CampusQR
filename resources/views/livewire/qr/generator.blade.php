@@ -26,13 +26,10 @@
 
     <div class="card">
         <div class="container md:items-start">
-            {{-- QR Code --}}
-            {{-- QR Display --}}
             <div class="flex flex-col items-center">
                 <div class="aspect-square card flex items-center justify-center">
                     <div class="text-center">
                         <div class="p-4 border border-zinc-300 inline-block">
-                            <!-- QR Code -->
                             @if($studentId)
                                 {!! QrCode::size($qrCodeSize)->generate($studentSelected->student_number) !!}
                             @else
@@ -46,7 +43,6 @@
                 </div>
             </div>
 
-            {{-- Student Info --}}
             <div class="flex-1 md:px-4">
                 <flux:heading level="h2" size="xl" class="px-4">Student Information</flux:heading>
                 <div class="container justify-start items-start px-4">
