@@ -12,6 +12,7 @@ class Scanner extends Component
     public $student;
     public $scanError;
     public $recentAttendances;
+    public $mode = null;
 
     protected $listeners = ['qrScanned' => 'onScan'];
 
@@ -20,7 +21,7 @@ class Scanner extends Component
         $this->recentAttendances = Attendance::with('student')
             ->whereDate('created_at', today())
             ->latest()
-            ->take(3)
+            ->take(5)
             ->get();
     }
 
@@ -31,25 +32,44 @@ class Scanner extends Component
         $this->student = Student::where('student_number', $data)->first();
         
         if ($this->student) {
-            $existingAttendance = Attendance::where('student_id', $this->student->id)
+            $latestAttendance = Attendance::where('student_id', $this->student->id)
                 ->whereDate('created_at', today())
+                ->latest()
                 ->first();
+            
+            $now = now();
+            $diff = 0;
 
-            if (!$existingAttendance) {
-                Attendance::create([
-                    'student_id' => $this->student->id,
-                    'date' => now()->toDateString(),
-                    'time_in' => now(),
-                ]);
-                
-                $this->recentAttendances = Attendance::with('student')
-                    ->whereDate('created_at', today())
-                    ->latest()
-                    ->take(10)
-                    ->get();
-            } else {
-                $this->scanError = 'Attendance already recorded for today';
+            if ($latestAttendance) {
+                $latestTime = $latestAttendance->time_in ?? $latestAttendance->time_out;
+                $diff = $latestTime->diffInSeconds($now);
             }
+
+            if (!$latestAttendance || $diff >= 5) {
+                if (!$latestAttendance || $latestAttendance->time_out) {
+                    Attendance::create([
+                        'student_id' => $this->student->id,
+                        'date' => now()->toDateString(),
+                        'time_in' => now(),
+                    ]);
+
+                    $this->mode = 'in';
+                } else {
+                    Attendance::create([
+                        'student_id' => $this->student->id,
+                        'date' => now()->toDateString(),
+                        'time_out' => now(),
+                    ]);
+
+                    $this->mode = 'out';
+                }
+            }
+                
+            $this->recentAttendances = Attendance::with('student')
+                ->whereDate('created_at', today())
+                ->latest()
+                ->take(5)
+                ->get();
         } else {
             $this->scanError = 'Student not found with ID: ' . $data;
         }
