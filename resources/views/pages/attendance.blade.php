@@ -14,17 +14,6 @@
                         <input type="date" class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm p-2">
                     </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Courses</label>
-                    <select class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm">
-                        <option>All Course</option>
-                        <option>BSIT</option>
-                        <option>BSN</option>
-                        <option>BSED</option>
-                        <option>BEED</option>
-                        <option>BSHM</option>
-                    </select>
-                </div>
                 <div class="flex items-end">
                     <button class="w-full px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg text-sm font-medium transition-colors">
                         Generate Report
