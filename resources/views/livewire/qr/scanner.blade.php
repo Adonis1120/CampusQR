@@ -1,9 +1,9 @@
 <div class="wrapper">
     <flux:custom.header header_title="QR Scanner" header_subtitle="Scan student QR codes for attendance." />
 
-    <div class="flex gap-4">
-        <div class="card w-150">
-            <div id="reader" class="camera" wire:ignore></div>
+    <div class="scanner">
+        <div class="card w-full lg:w-3/5">
+            <div id="reader" class="scanner-camera" wire:ignore></div>
         </div>
 
         <div class="wrapper flex-1 h-full">
@@ -73,7 +73,7 @@
                             </flux:field>
                         </div>
                     @empty
-                        <flux:text class="text-xs">No attendance recorded today</flux:text>
+                        <flux:text>No attendance recorded today</flux:text>
                     @endforelse
                 </div>
             </div>

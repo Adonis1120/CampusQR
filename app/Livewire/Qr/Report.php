@@ -40,12 +40,10 @@ class Report extends Component
 
     public function calculateAttendance()
     {
-        // Get total distinct students who attended during the date range
         $this->totalPresent = Attendance::whereBetween('created_at', [$this->dateRangeStart, $this->dateRangeEnd])
             ->distinct('student_id')
             ->count('student_id');
 
-        // Calculate total absent students (total students minus those who attended)
         $this->totalAbsent = $this->totalStudents - $this->totalPresent;
         $this->attendanceRate = $this->totalPresent / $this->totalStudents * 100;
     }

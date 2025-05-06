@@ -24,8 +24,4 @@
     .scrollable {
         @apply relative overflow-x-auto shadow-md sm:rounded-lg;
     }
-
-    .camera {
-        @apply rounded-xl bg-cover bg-center overflow-hidden;
-    }
 }

@@ -1,0 +1,9 @@
+@mixin scanner {
+    .scanner {
+        @apply flex flex-col md:flex-row gap-4;
+
+        &-camera {
+            @apply rounded-xl bg-cover bg-center overflow-hidden;
+        }
+    }
+}

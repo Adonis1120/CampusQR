@@ -15,6 +15,7 @@
     @include home;
     @include auth;
     @include setting;
+    @include scanner;
 
     // components: reusable across pages
     @include mixins;
