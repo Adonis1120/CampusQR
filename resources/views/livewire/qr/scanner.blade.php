@@ -81,38 +81,37 @@
     </div>
 </div>
 
-    @push('scripts')
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const html5QrCode = new Html5Qrcode("reader");
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const html5QrCode = new Html5Qrcode("reader");
 
-                html5QrCode.start(
-                    { facingMode: "environment" }, // rear camera
-                    {
-                        fps: 10,
-                        qrbox: 250
-                    },
-                    (decodedText, decodedResult) => {
-                        console.log(`QR Code detected: ${decodedText}`);
+            html5QrCode.start(
+                { facingMode: "environment" }, // rear camera
+                {
+                    fps: 10,
+                    qrbox: 250
+                },
+                (decodedText, decodedResult) => {
+                    console.log(`QR Code detected: ${decodedText}`);
 
-                        //document.getElementById('qrCode').value = decodedText;
-                        setTimeout(() => {
-                            const input = document.getElementById('qrCode');
-                            if (input) {
-                                input.value = decodedText;
-                            }
-                        }, 100);
+                    //document.getElementById('qrCode').value = decodedText;
+                    setTimeout(() => {
+                        const input = document.getElementById('qrCode');
+                        if (input) {
+                            input.value = decodedText;
+                        }
+                    }, 100);
 
-                        document.getElementById('qrCode').value = decodedText;
-                        document.getElementById('qrCode').dispatchEvent(new Event('change'));
+                    document.getElementById('qrCode').value = decodedText;
+                    document.getElementById('qrCode').dispatchEvent(new Event('change'));
 
-                        // html5QrCode.stop();  // Put this if you want the QR Scanner disappear after reading.
-                    },
-                    (errorMessage) => {
-                        // console.log(`QR Code scan error: ${errorMessage}`);
-                    }
-                );
-            });
-        </script>
-    @endpush
-</div>
+                    // html5QrCode.stop();  // Put this if you want the QR Scanner disappear after reading.
+                },
+                (errorMessage) => {
+                    // console.log(`QR Code scan error: ${errorMessage}`);
+                }
+            );
+        });
+    </script>
+@endpush

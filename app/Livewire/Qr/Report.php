@@ -25,8 +25,8 @@ class Report extends Component
 
     public function mount()
     {
-        $this->dateRangeStart = today()->toDateString();
-        $this->dateRangeEnd = today()->toDateString();
+        $this->dateRangeStart = Carbon::parse($this->dateRangeStart)->startOfDay();
+        $this->dateRangeEnd = Carbon::parse($this->dateRangeEnd)->endOfDay();
         $this->totalDays = 1;
         $this->totalStudents = Student::count();
     }

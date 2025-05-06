@@ -21,7 +21,7 @@
         <div class="card flex-1">
             <div class="flex flex-row">
                 <div>
-                    <flux:text class="mt-2">Total Days</flux:text>
+                    <flux:text class="mt-2">Total {{ Str::plural('Day', $totalDays)}}</flux:text>
                     <flux:heading size="xl">{{ $totalDays }}</flux:heading>
                 </div>
                 <div class="container-content-endcenter">
