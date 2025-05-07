@@ -38,9 +38,9 @@ class Students extends Component
 
     public function destroy()
     {
-        $students = Student::find($this->student_id);
+        $student = Student::find($this->student_id);
 
-        if (!$students) {
+        if (!$student) {
             session()->flash('message', 'Student not found.');
             return;
         }
@@ -48,8 +48,12 @@ class Students extends Component
         if (!Auth::check() || Auth::user()->role !== Role::ADMIN->value) {
             abort(403, 'Unauthorized.');
         }
+
+        if ($student->user) {
+            $student->user->delete();
+        }
         
-        $students->delete();
+        $student->delete();
 
         $this->dispatch('resetPagination');
         Flux::modal('delete-student')->close();

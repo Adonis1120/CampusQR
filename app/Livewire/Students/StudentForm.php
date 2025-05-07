@@ -72,13 +72,14 @@ class StudentForm extends Component
         if ($this->is_editing) {
             $this->student->update($data);
         } else {
-            Student::create($data);
-            User::create([
+            $user = User::create([
                 'name' => $this->first_name . ' ' . $this->last_name,
                 'email' => $data['email'],
                 'password' => bcrypt($this->student_number),
                 'role' => 'student',
             ]);
+            $data['user_id']= $user->id;
+            Student::create($data);
         }
 
         $this->resetForm();

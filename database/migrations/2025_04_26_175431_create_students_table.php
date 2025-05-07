@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->nullable()
                 ->constrained()
-                ->onDelete('set null');
+                ->cascadeOnDelete();
             $table->string('student_number', 20)->unique()->comment('School ID number');
             $table->string('first_name', 50);
             $table->char('middle_initial', 1)->nullable();

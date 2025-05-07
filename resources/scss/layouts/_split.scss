@@ -1,9 +1,11 @@
 @mixin split {
     .split {
         @apply relative grid h-dvh flex-col items-center justify-center px-8 sm:px-0 lg:max-w-none lg:grid-cols-2 lg:px-0;
+        @apply h-screen overflow-hidden;    // for scrollable content on the right side
 
         &-left {
             @apply relative hidden h-full flex-col p-10 lg:flex dark:border-r dark:border-neutral-800;
+            @apply h-full overflow-hidden;    // not go along with the scrollable content on the right side
 
             &-gradient {
                 @apply absolute inset-0 bg-gradient-to-br from-zinc-400 to-zinc-100;
@@ -24,9 +26,11 @@
 
         &-right {
             @apply w-full lg:p-8;
+            @apply h-full overflow-y-auto;    // for scrollable content on the right side
 
             &-container {
                 @apply mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px];
+                @apply min-h-full;    // for scrollable content on the right side
             }
 
             
