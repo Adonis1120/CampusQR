@@ -25,7 +25,7 @@ class Users extends Component
         $this->resetPage();
     }
 
-    public function showForm($id)
+    public function showForm($id = null)
     {
         $this->dispatch('formUser', $id);
     }

@@ -2,7 +2,7 @@
     <flux:modal name="student-form" class="md:w-96">
         <div class="space-y-6">
             <div>
-                <flux:heading size="lg">{{ $is_editing ? 'Update Student' : 'Create Student' }}</flux:heading>
+                <flux:heading size="xl">{{ $is_editing ? 'Update Student' : 'Create Student' }}</flux:heading>
                 <flux:text class="mt-2">{{ $is_editing ? 'Make changes to student personal details.' : 'Fill up the form with the student personal details.' }}</flux:text>
             </div>
 
@@ -20,7 +20,7 @@
 
             <div class="flex">
                 <flux:spacer />
-                <flux:button wire:click="save" type="submit" variant="primary">{{ $is_editing ? 'Update' : 'Save' }}</flux:button>
+                <flux:button wire:click="save" type="submit" variant="primary" wire:loading.attr="disabled">{{ $is_editing ? 'Update' : 'Save' }}</flux:button>
             </div>
         </div>
     </flux:modal>

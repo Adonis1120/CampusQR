@@ -59,6 +59,7 @@ class UserForm extends Component
         if ($this->is_editing) {
             $this->user->update($data);
         } else {
+            $data['password'] = bcrypt($this->email);
             User::create($data);
         }
 

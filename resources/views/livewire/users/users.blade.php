@@ -5,7 +5,7 @@
         <flux:custom.search />
         
         <flux:modal.trigger name="userForm" class="flex justify-end">
-            <flux:button icon="user-plus" disabled>{{ __('Register User') }}</flux:button>
+            <flux:button icon="user-plus" wire:click="showForm">{{ __('Register User') }}</flux:button>
         </flux:modal.trigger>
     </div>
 
