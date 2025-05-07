@@ -13,7 +13,7 @@ class Student extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'student_id', 'first_name', 'middle_initial',
+        'user_id', 'student_number', 'first_name', 'middle_initial',
         'last_name', 'suffix', 'guardian_name', 'relationship',
         'cp_number', 'qr_code'
     ];

@@ -1,13 +1,16 @@
 <div class="wrapper">
     <flux:custom.header  header_title="Student Management" header_subtitle="Manage Student Information" />
-
-    <div class="container">
-        <flux:custom.search placeholderText="names" />
+    
+    @if ($is_admin)
+        <div class="container">
+            <flux:custom.search placeholderText="names" />
         
-        <flux:modal.trigger name="studentForm" class="flex justify-end">
-            <flux:button icon="user-plus" disabled>{{ __('Register Student') }}</flux:button>
-        </flux:modal.trigger>
-    </div>
+            <flux:modal.trigger name="studentForm" class="flex justify-end">
+                <flux:button icon="user-plus" wire:click="showStudent">{{ __('Register Student') }}</flux:button>
+            </flux:modal.trigger>
+        </div>
+    @endif
+    
 
     <div class="scrollable">
         <table>
@@ -51,7 +54,9 @@
                         </td>
                         <td>
                             <flux:button icon="pencil-square" size="sm" variant="ghost" wire:click="showStudent('{{ $student->id }}')"></flux:button>
-                            <flux:button icon="trash" size="sm" variant="ghost" wire:click="delete('{{ $student->id }}')"></flux:button>
+                            @if ($is_admin)
+                                <flux:button icon="trash" size="sm" variant="ghost" wire:click="delete('{{ $student->id }}')"></flux:button>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

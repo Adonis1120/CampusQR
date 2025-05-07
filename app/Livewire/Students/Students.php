@@ -15,6 +15,7 @@ class Students extends Component
 
     public $student_id;
     public $search = '';
+    public $is_admin = false;
 
     protected $paginationTheme = 'tailwind';
     protected $listeners = ['resetPagination' => 'resetPage'];
@@ -24,7 +25,7 @@ class Students extends Component
         $this->resetPage();
     }
 
-    public function showStudent($id)
+    public function showStudent($id = null)
     {
         $this->dispatch('formStudent', $id);
     }
@@ -64,7 +65,18 @@ class Students extends Component
                 ->paginate(10);
         }
 
-        return Student::select('id', 'student_number', 'first_name', 'middle_initial', 'last_name', 'suffix', 'guardian_name', 'relationship', 'cp_number')->paginate(10);
+        $user = Auth::user();
+
+        if ($user->role == Role::STUDENT->value) {
+            return Student::where('user_id', $user->id)
+                ->select('id', 'student_number', 'first_name', 'middle_initial', 'last_name', 'suffix', 'guardian_name', 'relationship', 'cp_number')
+                ->paginate(10);
+        }
+
+        $this->is_admin = true;
+
+        return Student::select('id', 'student_number', 'first_name', 'middle_initial', 'last_name', 'suffix', 'guardian_name', 'relationship', 'cp_number')
+            ->paginate(10);
     }
 
     public function render()

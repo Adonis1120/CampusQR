@@ -3,6 +3,7 @@
 namespace App\Livewire\Students;
 
 use App\Models\Student;
+use App\Models\User;
 use Flux\Flux;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -15,12 +16,12 @@ class StudentForm extends Component
 
     public function mount()
     {
-        // $this->cooperatives = Student::all();
+        // $this->students = Student::all();
     }
 
     public function rules()
     {
-        return [
+        $rules = [
             'student_number'  => 'required|string|max:20|unique:students,student_number,' . $this->student_id,
             'first_name'      => 'required|string|max:50',
             'middle_initial'  => 'nullable|string|size:1',
@@ -30,6 +31,12 @@ class StudentForm extends Component
             'relationship'    => 'required|string|max:30',
             'cp_number'       => 'required|string|size:12',
         ];
+    
+        if (!$this->is_editing) {
+            $rules['email'] = 'required|email|unique:users,email';
+        }
+    
+        return $rules;
     }
 
     #[On('formStudent')]
@@ -66,6 +73,12 @@ class StudentForm extends Component
             $this->student->update($data);
         } else {
             Student::create($data);
+            User::create([
+                'name' => $this->first_name . ' ' . $this->last_name,
+                'email' => $data['email'],
+                'password' => bcrypt($this->student_number),
+                'role' => 'student',
+            ]);
         }
 
         $this->resetForm();

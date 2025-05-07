@@ -13,7 +13,10 @@
             <flux:input label="Suffix" wire:model="suffix" placeholder="Enter suffix (optional)" />
             <flux:input label="Guardian's Name" wire:model="guardian_name" placeholder="Enter guardian's name" />
             <flux:input label="Relationship" wire:model="relationship" placeholder="Relationship to guardian" />
-            <flux:input label="Contact Number" wire:model="cp_number" placeholder="Enter contact number" maxlength="11" />
+            <flux:input label="Contact Number" wire:model="cp_number" placeholder="Enter contact number" maxlength="12" />
+            @if (!$is_editing)
+                <flux:input label="Email" wire:model="email" placeholder="Enter email address" />
+            @endif
 
             <div class="flex">
                 <flux:spacer />
