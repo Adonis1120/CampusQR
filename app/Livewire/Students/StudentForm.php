@@ -29,7 +29,7 @@ class StudentForm extends Component
             'suffix'          => 'nullable|string|max:10',
             'guardian_name'   => 'required|string|max:100',
             'relationship'    => 'required|string|max:30',
-            'cp_number'       => 'required|string|size:12',
+            'cp_number'       => 'required|string|size:13',
         ];
     
         if (!$this->is_editing) {

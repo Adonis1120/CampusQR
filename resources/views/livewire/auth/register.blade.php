@@ -38,7 +38,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             'suffix'          => 'nullable|string|max:10',
             'guardian_name'   => 'required|string|max:100',
             'relationship'    => 'required|string|max:30',
-            'cp_number'       => 'required|string|size:12',
+            'cp_number'       => 'required|string|size:13',
             
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
@@ -76,14 +76,14 @@ new #[Layout('components.layouts.auth')] class extends Component {
     <x-auth-session-status class="text-center" :status="session('status')" />
 
     <form wire:submit="register" class="auth-form">
-        <flux:input label="Student Number" wire:model="student_number" placeholder="ID number" autofocus />
+        <flux:input label="Student Number" wire:model="student_number" placeholder="School ID number" autofocus />
         <flux:input label="First Name" wire:model.lazy="first_name" placeholder="First name" />
         <flux:input label="Middle Initial" wire:model.lazy="middle_initial" placeholder="Middle initial" maxlength="1"  />
         <flux:input label="Last Name" wire:model.lazy="last_name" placeholder="Last name or surname" />
-        <flux:input label="Suffix" wire:model.lazy="suffix" placeholder="Suffix (optional)" />
+        <flux:input label="Suffix" wire:model.lazy="suffix" placeholder="Extension name (optional)" />
         <flux:input label="Guardian's Name" wire:model="guardian_name" placeholder="Guardian's full name" />
         <flux:input label="Relationship" wire:model="relationship" placeholder="Relationship to guardian" />
-        <flux:input label="Contact Number" wire:model="cp_number" placeholder="CP contact number" maxlength="12" />
+        <flux:input label="Contact Number" wire:model="cp_number" placeholder="CP number" maxlength="13" />
 
         <!-- Name -->
         <flux:input

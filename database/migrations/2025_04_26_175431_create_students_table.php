@@ -18,18 +18,18 @@ return new class extends Migration
                 ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('student_number', 20)->unique()->comment('School ID number');
+            $table->string('student_number', 10)->unique()->comment('School ID number');
             $table->string('first_name', 50);
             $table->char('middle_initial', 1)->nullable();
             $table->string('last_name', 50);
             $table->string('suffix', 10)->nullable();
             $table->string('guardian_name', 100);
             $table->string('relationship', 30);
-            $table->string('cp_number', 12);
+            $table->string('cp_number', 13);
             $table->string('qr_code', 100)->unique()->nullable();
             $table->timestamps();
             
-            $table->index(['last_name', 'first_name']);
+            $table->index(['student_number', 'last_name', 'first_name']);
         });
     }
 
