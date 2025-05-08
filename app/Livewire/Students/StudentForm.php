@@ -68,18 +68,25 @@ class StudentForm extends Component
     public function save()
     {
         $data = $this->validate();
+        $full_name = $this->first_name . ' ' . ($this->middle_initial ? $this->middle_initial . '. ' : '') . '. ' . $this->last_name . ($this->suffix ? ' ' . $this->suffix : '');
 
         if ($this->is_editing) {
             $this->student->update($data);
+
+            if ($this->student->user) {
+                $this->student->user->update([
+                    'name' => $full_name,
+                ]);
+            }
         } else {
+            Student::create($data);
             $user = User::create([
-                'name' => $this->first_name . ' ' . $this->last_name,
+                'name' => $full_name,
                 'email' => $data['email'],
                 'password' => bcrypt($this->student_number),
                 'role' => 'student',
             ]);
             $data['user_id']= $user->id;
-            Student::create($data);
         }
 
         $this->resetForm();

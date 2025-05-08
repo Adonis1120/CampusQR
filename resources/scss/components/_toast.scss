@@ -1,0 +1,13 @@
+@mixin toast {
+    .toast {
+        @apply fixed top-4 right-5 z-1000 flex items-center w-full max-w-xs p-4 text-accent bg-secondary-subtle rounded-lg shadow-lg shadow-green-200/50 dark:text-white dark:bg-zinc-100;
+
+        &-container {
+            @apply ms-3 text-sm font-normal;
+        }
+
+        &-x {
+            @apply absolute right-2 -mx-1.5 -my-1.5 bg-secondary-subtle text-accent hover:text-white rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-secondary inline-flex items-center justify-center h-8 w-8 dark:text-white dark:bg-zinc-100 dark:hover:bg-secondary;
+        }
+    }
+}

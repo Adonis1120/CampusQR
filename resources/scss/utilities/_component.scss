@@ -22,6 +22,7 @@
     @include cards;
     @include logo;
     @include panel;
+    @include toast;
 
     // effects: group hover doesn't work if it is after the module or component who used it
     @include logo-hover;

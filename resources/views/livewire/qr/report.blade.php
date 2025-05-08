@@ -3,12 +3,12 @@
 
     <div class="container">
         <div class="w-full flex-1">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Date Range</label>
+            <label class="block text-sm font-medium text-accent dark:text-zinc-100 mb-1">Date Range</label>
             <div class="flex items-center gap-2">
-                <input type="date" class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm p-2"
+                <input type="date" class="w-full text-accent dark:text-zinc-100 rounded-lg border border-zinc-200 dark:border-zinc-500 bg-transparent dark:bg-zinc-600 text-sm p-2"
                         wire:model="dateRangeStart">
-                <span class="text-zinc-500 dark:text-zinc-400">to</span>
-                <input type="date" class="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-transparent text-sm p-2"
+                <span class="text-zinc-500 dark:text-zinc-100">to</span>
+                <input type="date" class="w-full text-accent dark:text-zinc-100 rounded-lg border border-zinc-200 dark:border-zinc-500 bg-transparent dark:bg-zinc-600 text-sm p-2"
                         wire:model="dateRangeEnd">
             </div>
         </div>

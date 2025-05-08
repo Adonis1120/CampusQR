@@ -133,7 +133,9 @@
         const attendanceCounts = data.map(d => d.present);
 
         const rootStyles = getComputedStyle(document.documentElement);
-        const accentColor = rootStyles.getPropertyValue('--color-zinc-600').trim();
+        const isDarkMode = document.documentElement.classList.contains('dark');
+        const accentColor = isDarkMode ? rootStyles.getPropertyValue('--color-zinc-700').trim() : rootStyles.getPropertyValue('--color-zinc-600').trim(); // dark:bg-zinc-800 : zinc-600
+        const textColor = isDarkMode ? rootStyles.getPropertyValue('--color-zinc-200').trim() : rootStyles.getPropertyValue('--color-zinc-800').trim();   // zinc-200 : zinc-800
 
         const ctx = document.getElementById('attendanceChart').getContext('2d');
         new Chart(ctx, {
@@ -143,7 +145,8 @@
                 datasets: [{
                     label: 'Present Students',
                     data: attendanceCounts,
-                    backgroundColor: accentColor
+                    backgroundColor: accentColor,
+                    color: textColor
                 }]
             },
             options: {
@@ -153,7 +156,23 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Number of Students'
+                            text: 'Number of Students',
+                            color: textColor
+                        },
+                        ticks: {
+                            color: textColor
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: textColor
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: textColor
                         }
                     }
                 }

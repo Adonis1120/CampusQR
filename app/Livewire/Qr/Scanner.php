@@ -4,6 +4,7 @@ namespace App\Livewire\Qr;
 
 use App\Models\Attendance;
 use App\Models\Student;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class Scanner extends Component
@@ -64,6 +65,25 @@ class Scanner extends Component
                     $this->mode = 'out';
                 }
             }
+
+            /* uncomment for twilio push message
+            $client = new Client($sid, $token); // can use env for $id, $token and $twilioNumber for safer approach
+
+            $client->messages->create(
+                '+1234567890', // recipient phone number
+                [
+                    'from' => $twilioNumber,
+                    'body' => $student->first_name . ' timed in at ' . now()
+                ]
+            );
+            */
+
+            $message = $this->student->name . ' timed ' . $$this->mode . ' at ' . now();
+
+            Mail::raw($message, function ($mail) {
+                $mail->to($this->student->email)
+                    ->subject("QR Scan Time " . $this->mode);
+            });
                 
             $this->recentAttendances = Attendance::with('student')
                 ->whereDate('created_at', today())

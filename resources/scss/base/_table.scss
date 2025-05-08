@@ -3,7 +3,7 @@
         @apply w-full text-sm text-left rtl:text-right text-accent dark:text-white;
     
         thead {
-            @apply text-sm text-accent uppercase bg-zinc-200 dark:bg-accent dark:text-white;
+            @apply text-sm text-accent uppercase bg-zinc-200 dark:bg-zinc-950 dark:text-white;
 
             th {
                 @apply p-4;
