@@ -123,7 +123,7 @@
     </x-sections.panel>
 </div>
 
-{{-- Chart.js Implementation --}}
+{{-- Chart.js attendanceChart Implementation --}}
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>

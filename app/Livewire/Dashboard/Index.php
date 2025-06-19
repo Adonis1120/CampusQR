@@ -24,12 +24,11 @@ class Index extends Component
             ->count('student_id');
 
         $this->total_absent = $this->total_student - $this->total_present;
-        $this->attendance_rate = $this->total_present / $this->total_student * 100;
+        $this->attendance_rate = number_format($this->total_present / $this->total_student * 100, 2);
 
-        $query =  Attendance::whereBetween('created_at', [now()->startOfDay(),now()->endOfDay()]);
-        $this->total_scan = $query->count();
-        $this->time_in = $query->where('time_in', '!=', null)->count();
-        $this->time_out = $query->where('time_out', '!=', null)->count();
+        $this->total_scan = Attendance::whereBetween('created_at', [now()->startOfDay(),now()->endOfDay()])->count();
+        $this->time_in = Attendance::whereBetween('created_at', [now()->startOfDay(),now()->endOfDay()])->where('time_in', '!=', null)->count();
+        $this->time_out = Attendance::whereBetween('created_at', [now()->startOfDay(),now()->endOfDay()])->where('time_out', '!=', null)->count();
 
         $this->recent_attendances = Attendance::with('student')
             ->whereDate('created_at', today())
