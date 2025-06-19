@@ -78,6 +78,23 @@ class Scanner extends Component
             );
             */
 
+            /* uncoment for vonage push message
+            $basic  = new \Vonage\Client\Credentials\Basic("d6900c69", "wq8HfTOGcT0fsxdi");
+            $client = new \Vonage\Client($basic);
+
+            $response = $client->sms()->send(
+            new \Vonage\SMS\Message\SMS($this->student->cp_number, $studentName, $attendanceMessage)
+            );
+
+            $message = $response->current();
+
+            if ($message->getStatus() == 0) {
+                $this->dispatch('show-toast', 'Text message sent successfully!');
+            } else {
+                echo "The message failed with status: " . $message->getStatus();
+            }
+            */
+
             $message = $this->student->name . ' timed ' . $$this->mode . ' at ' . now();
 
             Mail::raw($message, function ($mail) {
